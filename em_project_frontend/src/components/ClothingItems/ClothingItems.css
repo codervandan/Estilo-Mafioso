@@ -1,0 +1,14 @@
+.clothing-items__back {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  text-decoration: none;
+  color: #fff;
+
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.clothing-items__back:hover {
+  opacity: 0.8;
+}

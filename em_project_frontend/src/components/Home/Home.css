@@ -37,6 +37,24 @@
   letter-spacing: 2px;
 }
 
+.home__nav a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+
+  border: 1px solid white;
+  padding: 10px 20px;
+
+  transition: all 0.3s ease;
+}
+
+.home__nav a:hover {
+  background-color: white;
+  color: black;
+}
+
 @media screen and (max-width: 768px) {
   .home__title {
     font-size: 2rem;

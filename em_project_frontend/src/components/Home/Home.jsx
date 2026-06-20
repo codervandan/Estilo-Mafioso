@@ -9,11 +9,11 @@ function Home() {
       <p className="home__subtitle">Luxury Streetwear</p>
 
       <nav className="home__nav">
-        <Link to="/">Home</Link>
+        {/* <Link to="/">Home</Link>
 
-        <span>|</span>
+        <span>|</span> */}
 
-        <Link to="/clothing-items">Clothing Items</Link>
+        <Link to="/clothing-items">View Collection</Link>
       </nav>
     </section>
   );
