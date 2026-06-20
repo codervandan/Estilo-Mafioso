@@ -1,10 +1,11 @@
 import ProductCard from "../ProductCard/ProductCard";
+import "./Products.css";
 
-function Products({ products }) {
+function Products({ products, onCardClick }) {
   return (
-    <section>
-      {products.map((item) => (
-        <ProductCard key={item._id} product={item} />
+    <section className="products">
+      {products.map((product) => (
+        <ProductCard key={product._id} product={product} onCardClick={onCardClick} />
       ))}
     </section>
   );

@@ -1,0 +1,33 @@
+import model1 from "../assets/products/em-model1.png";
+import model2 from "../assets/products/em-model2.png";
+import model3 from "../assets/products/em-model3.png";
+import model4 from "../assets/products/em-model4.png";
+
+const products = [
+  {
+    _id: "1",
+    name: "EM Signature Tee",
+    price: 39.99,
+    imageUrl: model1,
+  },
+  {
+    _id: "2",
+    name: "EM Street Collection",
+    price: 49.99,
+    imageUrl: model2,
+  },
+  {
+    _id: "3",
+    name: "EM Premium Drop",
+    price: 59.99,
+    imageUrl: model3,
+  },
+  {
+    _id: "4",
+    name: "EM Limited Edition",
+    price: 69.99,
+    imageUrl: model4,
+  },
+];
+
+export default products;

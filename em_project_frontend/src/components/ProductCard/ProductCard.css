@@ -1,0 +1,19 @@
+.product-card {
+  width: 323px;
+  cursor: pointer;
+}
+
+.product-card__image {
+  width: 323px;
+  height: 328px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.product-card__title {
+  margin-top: 12px;
+}
+
+.product-card__price {
+  margin-top: 8px;
+}

@@ -1,11 +1,13 @@
-function ProductCard({ product }) {
+import "./ProductCard.css";
+
+function ProductCard({ product, onCardClick }) {
   return (
-    <article>
-      <img src={product.imageUrl} alt={product.name} />
+    <article className="product-card" onClick={() => onCardClick(product)}>
+      <img className="product-card__image" src={product.imageUrl} alt={product.name} />
 
-      <h3>{product.name}</h3>
+      <h3 className="product-card__title">{product.name}</h3>
 
-      <p>${product.price}</p>
+      <p className="product-card__price">${product.price}</p>
     </article>
   );
 }

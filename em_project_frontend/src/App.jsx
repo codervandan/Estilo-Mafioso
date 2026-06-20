@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
@@ -7,17 +8,61 @@ import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import Cart from "./components/Cart/Cart";
 
+import LoginModal from "./components/LoginModal/LoginModal";
+import RegisterModal from "./components/RegisterModal/RegisterModal";
+
+import Products from "./components/Products/Products";
+import productsData from "./utils/products";
+
 function App() {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleCardClick = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const openLoginModal = () => {
+    setIsLoginOpen(true);
+  };
+
+  const openRegisterModal = () => {
+    setIsRegisterOpen(true);
+  };
+
+  const closeAllModals = () => {
+    setIsLoginOpen(false);
+    setIsRegisterOpen(false);
+  };
+
+  const handleLogin = (data) => {
+    console.log("Login:", data);
+  };
+
+  const handleRegister = (data) => {
+    console.log("Register:", data);
+  };
+
   return (
     <div className="app">
       <Header />
       <main>
+        <button onClick={openLoginModal}>Login</button>
+
+        <button onClick={openRegisterModal}>Register</button>
+
+        <Products products={productsData} onCardClick={handleCardClick} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
+      {isLoginOpen && <LoginModal onLogin={handleLogin} onClose={closeAllModals} />}
+
+      {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
       <Footer />
     </div>
   );
