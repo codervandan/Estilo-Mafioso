@@ -14,6 +14,8 @@ import RegisterModal from "./components/RegisterModal/RegisterModal";
 import Products from "./components/Products/Products";
 import productsData from "./utils/products";
 
+import ClothingItems from "./components/ClothingItems/ClothingItems";
+
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -53,11 +55,12 @@ function App() {
 
         <button onClick={openRegisterModal}>Register</button>
 
-        <Products products={productsData} onCardClick={handleCardClick} />
+        {/* <Products products={productsData} onCardClick={handleCardClick} /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home onCardClick={handleCardClick} />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/clothing-items" element={<ClothingItems onCardClick={handleCardClick} />} />
         </Routes>
       </main>
       {isLoginOpen && <LoginModal onLogin={handleLogin} onClose={closeAllModals} />}
