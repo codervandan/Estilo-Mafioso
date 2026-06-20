@@ -6,7 +6,7 @@ import "./ClothingItems.css";
 function ClothingItems({ onCardClick }) {
   return (
     <section className="clothing-items">
-      <Link className="clothing-items_back" to="/">
+      <Link className="clothing-items__back" to="/">
         ← Back to Home
       </Link>
       <h2>Clothing Items</h2>

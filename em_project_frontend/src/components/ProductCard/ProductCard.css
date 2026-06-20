@@ -1,11 +1,11 @@
 .product-card {
-  width: 323px;
+  width: 220px;
   cursor: pointer;
 }
 
 .product-card__image {
-  width: 323px;
-  height: 328px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -16,4 +16,17 @@
 
 .product-card__price {
   margin-top: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .product-card {
+    width: 160px;
+  }
+
+  .product-card__image {
+    width: 160px;
+    height: 160px;
+
+    object-fit: cover;
+  }
 }

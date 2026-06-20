@@ -28,6 +28,30 @@ const products = [
     price: 69.99,
     imageUrl: model4,
   },
+  {
+    _id: "5",
+    name: "EM Limited Edition",
+    price: 69.99,
+    imageUrl: model4,
+  },
+  {
+    _id: "6",
+    name: "EM Limited Edition",
+    price: 69.99,
+    imageUrl: model4,
+  },
+  {
+    _id: "7",
+    name: "EM Limited Edition",
+    price: 69.99,
+    imageUrl: model4,
+  },
+  {
+    _id: "8",
+    name: "EM Limited Edition",
+    price: 69.99,
+    imageUrl: model4,
+  },
 ];
 
 export default products;
