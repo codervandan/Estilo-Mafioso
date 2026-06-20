@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amarante&display=swap");
+
 .clothing-items {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.clothing-items__back {
+/* .clothing-items__back {
   display: inline-block;
   margin-bottom: 20px;
 
@@ -17,4 +20,51 @@
 
 .clothing-items__back:hover {
   opacity: 0.8;
+} */
+
+.clothing-items__title {
+  font-family: "Amarante", serif;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: rgba(229, 231, 229, 0.7);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  /* text-shadow:
+    0 0 10px rgba(229, 231, 229, 0.7),
+    0 0 20px rgba(229, 231, 229, 0.7); */
+}
+
+/* .clothing-items__back {
+  font-family: "Cinzel Decorative", serif;
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: rgba(229, 231, 229, 0.7);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+} */
+
+/* .clothing-items__back:hover {
+  color: #fff;
+  transform: translateX(-5px);
+  text-shadow: 0 0 10px rgba(229, 231, 229, 0.7);
+} */
+
+.clothing-items__back {
+  display: block;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  text-decoration: none;
+  font-family: "Amarante", serif;
+  font-size: 1rem;
+  color: rgba(229, 231, 229, 0.7);
+  transition: color 0.3s ease;
+}
+
+.clothing-items__back:hover {
+  color: rgba(229, 231, 229, 0.7);
 }
