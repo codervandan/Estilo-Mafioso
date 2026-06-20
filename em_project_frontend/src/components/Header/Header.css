@@ -1,0 +1,29 @@
+.home {
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.home__title {
+  font-size: 7rem;
+  letter-spacing: 12px;
+  line-height: 1;
+  margin: 0;
+}
+
+.home__subtitle {
+  margin-top: 60px;
+  font-size: 1.3rem;
+  letter-spacing: 8px;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}

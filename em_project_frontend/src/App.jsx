@@ -51,9 +51,9 @@ function App() {
     <div className="app">
       <Header />
       <main>
-        <button onClick={openLoginModal}>Login</button>
+        {/* <button onClick={openLoginModal}>Login</button>
 
-        <button onClick={openRegisterModal}>Register</button>
+        <button onClick={openRegisterModal}>Register</button> */}
 
         {/* <Products products={productsData} onCardClick={handleCardClick} /> */}
         <Routes>
