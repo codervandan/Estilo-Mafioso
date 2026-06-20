@@ -9,6 +9,8 @@
   align-items: center;
 
   text-align: center;
+
+  color: rgba(229, 231, 229, 0.7);
 }
 
 /* .home__title {
@@ -21,9 +23,40 @@
   font-family: "Italianno", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(2rem, 8vw, 5rem);
+  /* font-size: clamp(2rem, 8vw, 5rem); */
+  font-size: 150px;
+  color: rgba(229, 231, 229, 0.7);
   letter-spacing: clamp(2px, 1vw, 12px);
   line-height: 1;
+  animation:
+    luxuryFade 2s ease-out,
+    float 5s ease-in-out infinite 4s;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes luxuryFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    letter-spacing: 0px;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 4px;
+  }
 }
 
 .home__subtitle {
@@ -43,13 +76,13 @@
 }
 
 .home__nav a {
-  color: white;
+  color: rgba(229, 231, 229, 0.7);
   text-decoration: none;
 
   font-size: 1.1rem;
   letter-spacing: 2px;
 
-  border: 1px solid white;
+  border: 1px solid rgba(153, 161, 153, 0.7);
   padding: 10px 20px;
 
   transition: all 0.3s ease;
