@@ -15,6 +15,8 @@ import Products from "./components/Products/Products";
 import productsData from "./utils/products";
 
 import ClothingItems from "./components/ClothingItems/ClothingItems";
+import "./App.css";
+import backgroundImage from "./assets/backgrounds/em-background1.png";
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
