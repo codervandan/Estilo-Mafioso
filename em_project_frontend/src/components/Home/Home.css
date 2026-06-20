@@ -9,10 +9,16 @@
   text-align: center;
 }
 
-.home__title {
+/* .home__title {
   font-size: 5rem;
   letter-spacing: 12px;
   margin: 0;
+} */
+
+.home__title {
+  font-size: clamp(2rem, 8vw, 5rem);
+  letter-spacing: clamp(2px, 1vw, 12px);
+  line-height: 1;
 }
 
 .home__subtitle {
@@ -29,4 +35,23 @@
 
   font-size: 1rem;
   letter-spacing: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .home__title {
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
+
+  .home__subtitle {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    margin-top: 20px;
+  }
+
+  .home__nav {
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
