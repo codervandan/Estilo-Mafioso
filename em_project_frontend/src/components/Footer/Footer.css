@@ -1,4 +1,7 @@
 .footer {
   font-family: "Amarante", serif;
   color: rgba(229, 231, 229, 0.7);
+  position: absolute;
+  bottom: 10px;
+  left: 65px;
 }
