@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -20,6 +20,7 @@ import "./App.css";
 import backgroundImage from "./assets/backgrounds/em-background1.png";
 
 function App() {
+  const location = useLocation();
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
@@ -74,7 +75,7 @@ function App() {
 
       {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
       {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
-      <Footer />
+      {location.pathname !== "/clothing-items" && <Footer />}
     </div>
   );
 }
