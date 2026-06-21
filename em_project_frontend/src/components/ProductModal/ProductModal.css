@@ -2,19 +2,24 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   z-index: 1000;
 }
 
 .modal__container {
   background: #fff;
+
   width: 450px;
-  max-width: 90vh;
+  max-width: 90vw;
   max-height: 90vh;
+
   border-radius: 12px;
   padding: 20px;
+
   position: relative;
   overflow-y: auto;
 }
@@ -22,6 +27,7 @@
 .modal__image {
   width: 100%;
   max-height: 500px;
+
   object-fit: cover;
   border-radius: 10px;
 }
@@ -30,15 +36,89 @@
   position: absolute;
   top: 10px;
   right: 15px;
+
   border: none;
   background: none;
+
   font-size: 24px;
   cursor: pointer;
+
+  color: #111;
+}
+
+.modal__title {
+  color: #111;
+
+  font-size: 2rem;
+  font-weight: 600;
+
+  text-align: center;
+
+  margin-top: 15px;
+}
+
+.modal__price {
+  color: #111;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  text-align: center;
+
+  margin-top: 10px;
+}
+
+.modal__description {
+  color: #333;
+
+  text-align: center;
+
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.modal__actions {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.modal__buy-btn,
+.modal__add-btn {
+  flex: 1;
+  height: 50px;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
+}
+
+.modal__buy-btn {
+  background: #000;
+  color: #fff;
 }
 
 .modal__add-btn {
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  cursor: pointer;
+  background: #000;
+  color: #fff;
+}
+
+.modal__buy-btn:hover,
+.modal__add-btn:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+.modal__buy-btn:active,
+.modal__add-btn:active {
+  transform: translateY(0);
 }

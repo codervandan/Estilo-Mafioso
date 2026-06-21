@@ -6,12 +6,12 @@ import "./ClothingItems.css";
 function ClothingItems({ onCardClick }) {
   return (
     <section className="clothing-items">
-      <h2 className="clothing-items__title">Clothing Items</h2>
+      <h2 className="clothing-items__title">Collection Items</h2>
 
       <Products products={productsData} onCardClick={onCardClick} />
 
       <Link className="clothing-items__back" to="/">
-        ← Back to Home
+        ← Back to home
       </Link>
     </section>
   );

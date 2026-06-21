@@ -12,15 +12,17 @@ function ProductModal({ onClose, product, onAddToCart }) {
 
         <img src={product.imageUrl} alt={product.name} className="modal__image" />
 
-        <h2>{product.name}</h2>
+        <p className="modal__price">${product.price}</p>
 
-        <p>${product.price}</p>
+        <p className="modal__description">{product.description}</p>
 
-        <p>{product.description}</p>
+        <div className="modal__actions">
+          <button className="modal__buy-btn">Buy Now</button>
 
-        <button className="modal__add-btn" onClick={() => onAddToCart(product)}>
-          Add To Cart
-        </button>
+          <button className="modal__add-btn" onClick={() => onAddToCart(product)}>
+            Add To Cart
+          </button>
+        </div>
       </div>
     </div>
   );
