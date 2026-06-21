@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Betania+Patmos&family=Honk:MORF@15&family=Luxurious+Script&family=Miss+Fajardose&family=Monsieur+La+Doulaise&display=swap");
 
 .home {
   min-height: 70vh;
@@ -20,18 +21,20 @@
 } */
 
 .home__title {
-  font-family: "Italianno", cursive;
+  font-family: "Ballet", cursive;
   font-weight: 400;
+  font-optical-sizing: auto;
   font-style: normal;
   /* font-size: clamp(2rem, 8vw, 5rem); */
   font-size: 150px;
   color: rgba(229, 231, 229, 0.7);
   letter-spacing: clamp(2px, 1vw, 12px);
-  line-height: 1;
+  line-height: 0.6;
   animation:
     luxuryFade 2s ease-out,
     float 2s ease-in-out infinite 3s;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  margin: 0;
 }
 
 @keyframes float {
@@ -60,6 +63,7 @@
 }
 
 .home__subtitle {
+  margin: -20px;
   margin-top: 54px;
   font-size: 1.2rem;
   letter-spacing: 8px;
@@ -102,6 +106,7 @@
   .home__title {
     font-size: 6rem;
     letter-spacing: 6px;
+    line-height: 0.8;
   }
 
   .home__subtitle {
@@ -114,5 +119,14 @@
     margin-top: 173px;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .home__subtitle {
+    position: relative;
+    top: 30px;
+    /* margin-top: 2rem; */
+    margin-top: -25px;
   }
 }
