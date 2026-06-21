@@ -2,12 +2,20 @@ import "./ProductCard.css";
 
 function ProductCard({ product, onCardClick }) {
   return (
-    <article className="product-card" onClick={() => onCardClick(product)}>
+    <article
+      className="product-card"
+      onClick={() => {
+        console.log("CARD CLICKED", product);
+        onCardClick(product);
+      }}
+    >
       <img className="product-card__image" src={product.imageUrl} alt={product.name} />
 
-      <h3 className="product-card__title">{product.name}</h3>
+      <div className="product-card__info">
+        <h3 className="product-card__title">{product.name}</h3>
 
-      <p className="product-card__price">${product.price}</p>
+        <p className="product-card__price">${product.price}</p>
+      </div>
     </article>
   );
 }

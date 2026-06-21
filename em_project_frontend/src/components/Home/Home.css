@@ -123,7 +123,7 @@
   }
 
   .home__nav {
-    margin-top: 180px;
+    margin-top: 100px;
     /* flex-wrap: wrap;
     justify-content: center;
     position: relative;
@@ -131,11 +131,23 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 480px) {
+  .home {
+    min-height: 42vh;
+  }
+
+  .home__title {
+    font-size: 5rem;
+  }
+
   .home__subtitle {
     position: relative;
     top: 30px;
     /* margin-top: 2rem; */
     margin-top: -25px;
+  }
+
+  .home__nav {
+    margin-top: 50px;
   }
 }

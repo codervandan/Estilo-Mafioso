@@ -17,6 +17,8 @@ body {
 }
 
 .app {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -27,8 +29,31 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  overflow: hidden;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to bottom, #000 0%, #000 35%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.3) 65%, transparent 80%);
+
+  pointer-events: none;
+  z-index: 0;
 }
 
 main {
   flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    background-position: center 80%;
+    background-size: cover;
+    background-attachment: scroll;
+  }
 }

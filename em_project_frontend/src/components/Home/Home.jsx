@@ -5,14 +5,10 @@ function Home() {
   return (
     <section className="home">
       <h1 className="home__title">Estilo Mafioso</h1>
-
       <p className="home__subtitle">Luxury Streetwear</p>
-
       <nav className="home__nav">
         {/* <Link to="/">Home</Link>
-
         <span>|</span> */}
-
         <Link to="/clothing-items">View Collection</Link>
       </nav>
     </section>

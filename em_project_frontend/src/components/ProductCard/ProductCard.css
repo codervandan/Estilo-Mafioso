@@ -1,26 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Amarante&display=swap");
 
 .product-card {
-  width: 220px;
+  width: 240px;
   cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .product-card__image {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 300px;
   object-fit: cover;
   border-radius: 12px;
 }
 
-.product-card__title {
+.product-card__info {
+  display: flex;
+  justify-content: space-around;
   font-family: "Amarante", serif;
+  align-items: center;
+  color: rgba(229, 231, 229, 0.7);
   margin-top: 12px;
-  color: rgba(229, 231, 229, 0.7);
-}
-
-.product-card__price {
-  margin-top: 8px;
-  color: rgba(229, 231, 229, 0.7);
 }
 
 @media screen and (max-width: 768px) {

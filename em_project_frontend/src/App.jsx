@@ -12,6 +12,7 @@ import LoginModal from "./components/LoginModal/LoginModal";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
 
 import Products from "./components/Products/Products";
+import ProductModal from "./components/ProductModal/ProductModal";
 import productsData from "./utils/products";
 
 import ClothingItems from "./components/ClothingItems/ClothingItems";
@@ -26,6 +27,10 @@ function App() {
 
   const handleCardClick = (product) => {
     setSelectedProduct(product);
+  };
+
+  const closeProductModal = () => {
+    setSelectedProduct(null);
   };
 
   const openLoginModal = () => {
@@ -68,6 +73,7 @@ function App() {
       {isLoginOpen && <LoginModal onLogin={handleLogin} onClose={closeAllModals} />}
 
       {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
+      {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
       <Footer />
     </div>
   );

@@ -29,13 +29,13 @@
 .products {
   display: grid;
 
-  grid-template-columns: repeat(4, 220px);
+  grid-template-columns: repeat(4, 280px);
 
   justify-content: center;
 
-  gap: 24px;
+  gap: 16px;
 
-  padding: 24px;
+  padding: 24px -4px;
 }
 
 @media screen and (max-width: 768px) {
