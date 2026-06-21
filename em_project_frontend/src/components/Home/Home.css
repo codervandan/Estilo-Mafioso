@@ -36,6 +36,7 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   margin: 0;
   margin-bottom: -15px;
+  pointer-events: none;
 }
 
 @keyframes float {
@@ -108,25 +109,25 @@
     font-size: 6rem;
     letter-spacing: 6px;
     line-height: 0.8;
-    margin-bottom: -15px;
-    position: fixed;
+    /* margin-bottom: -15px;
+    position: relative; */
   }
 
   .home__subtitle {
     font-size: 1rem;
     letter-spacing: 4px;
-    margin-top: 0;
-    margin: 196px;
+    margin-top: 106px;
+    /* margin: 196px;
     position: relative;
-    top: 178px;
+    top: 178px; */
   }
 
   .home__nav {
-    margin-top: 173px;
-    flex-wrap: wrap;
+    margin-top: 180px;
+    /* flex-wrap: wrap;
     justify-content: center;
-    position: absolute;
-    bottom: 293px;
+    position: relative;
+    bottom: 293px; */
   }
 }
 

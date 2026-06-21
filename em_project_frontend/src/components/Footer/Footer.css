@@ -1,7 +1,16 @@
 .footer {
-  font-family: "Amarante", serif;
-  color: rgba(229, 231, 229, 0.7);
-  position: absolute;
-  bottom: 10px;
-  left: 65px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  color: #fff;
+  text-align: center;
+}
+
+.footer__text {
+  white-space: nowrap;
 }
