@@ -65,8 +65,8 @@
 }
 
 .home__subtitle {
-  margin: -20px;
-  margin-top: 0;
+  margin: 0;
+  margin-top: 129px;
   font-size: 1.2rem;
   letter-spacing: 8px;
   text-shadow:
@@ -96,6 +96,9 @@
   border: 1px solid rgba(153, 161, 153, 0.7);
   padding: 10px 20px;
 
+  position: relative;
+  top: 80px;
+
   transition: all 0.3s ease;
 }
 
@@ -116,10 +119,8 @@
   .home__subtitle {
     font-size: 1rem;
     letter-spacing: 4px;
-    margin-top: 106px;
-    /* margin: 196px;
-    position: relative;
-    top: 178px; */
+    margin-top: -25px;
+    top: 50px;
   }
 
   .home__nav {
@@ -142,12 +143,14 @@
 
   .home__subtitle {
     position: relative;
-    top: 30px;
+    top: 133px;
     /* margin-top: 2rem; */
     margin-top: -25px;
   }
 
   .home__nav {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    position: relative;
+    top: 70px;
   }
 }
