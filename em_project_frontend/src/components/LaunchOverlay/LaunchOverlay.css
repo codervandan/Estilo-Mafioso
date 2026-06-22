@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Monsieur+La+Doulaise&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
+
 .launch-overlay {
   position: fixed;
   inset: 0;
@@ -9,6 +13,7 @@
 
   background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(12px);
+  /* display: none; */
 }
 
 .launch-overlay__content {
@@ -32,7 +37,7 @@
 }
 
 .launch-overlay__logo {
-  font-family: "Italianno", cursive;
+  font-family: "My Soul", cursive;
   font-size: 5rem;
   font-weight: 400;
   margin-bottom: 10px;
@@ -43,10 +48,17 @@
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  font-family: "Ballet", cursive;
+}
+
+.launch-overlay__subtitle {
+  font-family: "My Soul", cursive;
+  margin-top: 58px;
+  margin-bottom: 28px;
 }
 
 .launch-overlay__text {
-  color: #c8b273;
+  color: #cecdcb;
   font-size: 1.2rem;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -78,13 +90,13 @@
 }
 
 .launch-overlay__form button {
-  padding: 14px 24px;
+  padding: 14px 98px;
 
   border: none;
   cursor: pointer;
 
-  background: #c8b273;
-  color: black;
+  background: #797876;
+  color: rgb(211, 208, 208);
   font-weight: 700;
 
   border-radius: 8px;
@@ -103,4 +115,18 @@
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 728px) {
+  .launch-overlay__logo {
+    font-family: "My Soul", cursive;
+    font-size: 56px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .launch-overlay__logo {
+    font-family: "My Soul", cursive;
+    font-size: 56px;
+  }
 }
