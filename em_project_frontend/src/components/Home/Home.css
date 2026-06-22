@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Betania+Patmos&family=Honk:MORF@15&family=Luxurious+Script&family=Miss+Fajardose&family=Monsieur+La+Doulaise&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Monsieur+La+Doulaise&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
 
 .home {
   min-height: 70vh;
@@ -23,12 +24,12 @@
 } */
 
 .home__title {
-  font-family: "Ballet", cursive;
+  font-family: "My Soul", cursive;
   font-weight: 900;
   font-optical-sizing: auto;
   font-style: normal;
   /* font-size: clamp(2rem, 8vw, 5rem); */
-  font-size: 150px;
+  font-size: 100px;
   color: rgba(229, 231, 229, 0.7);
   letter-spacing: clamp(2px, 1vw, 12px);
   line-height: 0.6;

@@ -20,6 +20,7 @@
 
   overflow: hidden;
   isolation: isolate;
+  display: none;
 }
 
 /* Main clothing background */
