@@ -1,3 +1,5 @@
+import LaunchOverlay from "./components/LaunchOverlay/LaunchOverlay";
+
 import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -56,27 +58,30 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Header />
-      <main>
-        {/* <button onClick={openLoginModal}>Login</button>
+    <>
+      <div className="app">
+        <LaunchOverlay />
+        <Header />
+        <main>
+          {/* <button onClick={openLoginModal}>Login</button>
 
         <button onClick={openRegisterModal}>Register</button> */}
 
-        {/* <Products products={productsData} onCardClick={handleCardClick} /> */}
-        <Routes>
-          <Route path="/" element={<Home onCardClick={handleCardClick} />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/clothing-items" element={<ClothingItems onCardClick={handleCardClick} />} />
-        </Routes>
-      </main>
-      {isLoginOpen && <LoginModal onLogin={handleLogin} onClose={closeAllModals} />}
+          {/* <Products products={productsData} onCardClick={handleCardClick} /> */}
+          <Routes>
+            <Route path="/" element={<Home onCardClick={handleCardClick} />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/clothing-items" element={<ClothingItems onCardClick={handleCardClick} />} />
+          </Routes>
+        </main>
+        {isLoginOpen && <LoginModal onLogin={handleLogin} onClose={closeAllModals} />}
 
-      {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
-      {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
-      {location.pathname !== "/clothing-items" && <Footer />}
-    </div>
+        {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
+        {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
+        {location.pathname !== "/clothing-items" && <Footer />}
+      </div>
+    </>
   );
 }
 
