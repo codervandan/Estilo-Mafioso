@@ -2,6 +2,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=My+Soul&family=Tangerine:wght@400;700&display=swap");
+
 .launch-overlay {
   position: fixed;
   inset: 0;
@@ -37,7 +39,7 @@
 }
 
 .launch-overlay__logo {
-  font-family: "My Soul", cursive;
+  font-family: "Tangerine", cursive;
   font-size: 5rem;
   font-weight: 400;
   margin-bottom: 10px;
@@ -52,7 +54,7 @@
 }
 
 .launch-overlay__subtitle {
-  font-family: "My Soul", cursive;
+  font-family: "Tangerine", cursive;
   margin-top: 58px;
   margin-bottom: 28px;
 }
@@ -90,6 +92,7 @@
 }
 
 .launch-overlay__form button {
+  font-family: "Tangerine", cursive;
   padding: 14px 98px;
 
   border: none;

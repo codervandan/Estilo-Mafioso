@@ -9,7 +9,7 @@ function LaunchOverlay() {
         <h2 className="launch-overlay__subtitle">Sign up for text alerts</h2>
 
         <form className="launch-overlay__form">
-          <input type="tel" placeholder="Enter your phone number" />
+          <input type="tel" placeholder="XXX-XXX-XXXX" />
 
           <button className="launch-overlay__submit-btn" type="submit">
             Notify Me
