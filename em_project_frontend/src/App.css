@@ -8,17 +8,24 @@
 }
 
 body {
+  width: 100%;
+  min-height: 100vh;
   background-color: #000;
   color: #fff;
   font-family: sans-serif;
 }
 
 #root {
+  width: 100%;
   min-height: 100vh;
 }
 
 .app {
   position: relative;
+
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -53,7 +60,7 @@ main {
 
 @media screen and (max-width: 768px) {
   .app {
-    background-position: center 80%;
+    background-position: center center%;
     background-size: cover;
     background-attachment: scroll;
   }

@@ -20,7 +20,7 @@
 
   overflow: hidden;
   isolation: isolate;
-  display: none;
+  /* display: none; */
 }
 
 /* Main clothing background */
