@@ -16,42 +16,42 @@ const products = [
     price: 299.0,
     imageUrl: model3,
   },
-  {
-    _id: "3",
-    name: "Set 3",
-    price: 299.0,
-    imageUrl: model3,
-  },
-  {
-    _id: "4",
-    name: "Set 4",
-    price: 299.0,
-    imageUrl: model3,
-  },
-  {
-    _id: "5",
-    name: "Set 5",
-    price: 299.0,
-    imageUrl: model3,
-  },
-  {
-    _id: "6",
-    name: "Set 6",
-    price: 299.0,
-    imageUrl: model3,
-  },
-  {
-    _id: "7",
-    name: "Set 7",
-    price: 299.0,
-    imageUrl: model3,
-  },
-  {
-    _id: "8",
-    name: "Set 8",
-    price: 299.0,
-    imageUrl: model3,
-  },
+  // {
+  //   _id: "3",
+  //   name: "Set 3",
+  //   price: 299.0,
+  //   imageUrl: model3,
+  // },
+  // {
+  //   _id: "4",
+  //   name: "Set 4",
+  //   price: 299.0,
+  //   imageUrl: model3,
+  // },
+  // {
+  //   _id: "5",
+  //   name: "Set 5",
+  //   price: 299.0,
+  //   imageUrl: model3,
+  // },
+  // {
+  //   _id: "6",
+  //   name: "Set 6",
+  //   price: 299.0,
+  //   imageUrl: model3,
+  // },
+  // {
+  //   _id: "7",
+  //   name: "Set 7",
+  //   price: 299.0,
+  //   imageUrl: model3,
+  // },
+  // {
+  //   _id: "8",
+  //   name: "Set 8",
+  //   price: 299.0,
+  //   imageUrl: model3,
+  // },
 ];
 
 export default products;
