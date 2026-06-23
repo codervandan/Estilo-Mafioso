@@ -197,6 +197,9 @@
     width: min(330px, 100%);
     grid-template-columns: 1fr;
     gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .launch-overlay__input,
