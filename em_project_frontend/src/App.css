@@ -60,7 +60,7 @@ main {
 
 @media screen and (max-width: 768px) {
   .app {
-    background-position: center center%;
+    background-position: center center;
     background-size: cover;
     background-attachment: scroll;
   }

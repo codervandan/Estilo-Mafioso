@@ -1,7 +1,7 @@
-import LaunchOverlay from "./components/LaunchOverlay/LaunchOverlay";
-
 import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+
+import LaunchOverlay from "./components/LaunchOverlay/LaunchOverlay";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -13,19 +13,16 @@ import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
 
-import Products from "./components/Products/Products";
 import ProductModal from "./components/ProductModal/ProductModal";
-import productsData from "./utils/products";
-
 import ClothingItems from "./components/ClothingItems/ClothingItems";
+
 import "./App.css";
-import backgroundImage from "./assets/backgrounds/em-background1.png";
 
 function App() {
   const location = useLocation();
+
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const handleCardClick = (product) => {
@@ -34,14 +31,6 @@ function App() {
 
   const closeProductModal = () => {
     setSelectedProduct(null);
-  };
-
-  const openLoginModal = () => {
-    setIsLoginOpen(true);
-  };
-
-  const openRegisterModal = () => {
-    setIsRegisterOpen(true);
   };
 
   const closeAllModals = () => {
@@ -59,15 +48,12 @@ function App() {
 
   return (
     <>
+      <LaunchOverlay />
+
       <div className="app">
-        <LaunchOverlay />
         <Header />
+
         <main>
-          {/* <button onClick={openLoginModal}>Login</button>
-
-        <button onClick={openRegisterModal}>Register</button> */}
-
-          {/* <Products products={productsData} onCardClick={handleCardClick} /> */}
           <Routes>
             <Route path="/" element={<Home onCardClick={handleCardClick} />} />
             <Route path="/profile" element={<Profile />} />
@@ -75,10 +61,13 @@ function App() {
             <Route path="/clothing-items" element={<ClothingItems onCardClick={handleCardClick} />} />
           </Routes>
         </main>
+
         {isLoginOpen && <LoginModal onLogin={handleLogin} onClose={closeAllModals} />}
 
         {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
+
         {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
+
         {location.pathname !== "/clothing-items" && <Footer />}
       </div>
     </>

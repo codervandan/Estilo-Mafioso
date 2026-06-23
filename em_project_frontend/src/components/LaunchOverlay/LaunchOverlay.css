@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap");
 
 .launch-overlay {
   position: fixed;
@@ -21,6 +21,8 @@
 
   overflow: hidden;
   isolation: isolate;
+
+  /* Turn this on only when you want to hide the overlay */
   /* display: none; */
 }
 
@@ -74,7 +76,7 @@
   margin: 0 0 18px;
 
   font-family: "Tangerine", cursive;
-  font-size: clamp(7.6rem, 26vw, 5rem);
+  font-size: clamp(4.8rem, 11vw, 7.6rem);
   font-weight: 400;
   line-height: 0.82;
 
@@ -87,7 +89,7 @@
 
   font-family: "Fira Sans", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1;
 
   color: rgba(255, 255, 255, 0.92);
@@ -99,64 +101,68 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px;
+  gap: 8px;
+
+  margin: 0 auto;
+}
+
+.launch-overlay__input,
+.launch-overlay__submit-btn {
+  width: 100%;
+  height: 36px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+
+  background: rgba(33, 29, 29, 0.88);
+  color: #fff;
+
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  box-shadow: none;
 }
 
 .launch-overlay__input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 22px;
-  padding: 24px 8px;
-  margin-left: 44px;
-
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 3px;
-
-  background: rgba(20, 20, 20, 0.82);
-  color: #fff;
-
-  font-size: 0.58rem;
+  padding: 0 12px;
+  text-align: left;
 }
 
 .launch-overlay__input::placeholder {
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.58);
+
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 .launch-overlay__input:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .launch-overlay__submit-btn {
+  padding: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 22px; */
-  /* padding: 24px 8px; */
-  margin-left: 10px;
-  margin-right: 47px;
-  padding: 10px;
-  height: 49px;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 3px;
-
-  background: rgba(20, 20, 20, 0.82);
-  color: rgba(255, 255, 255, 0.95);
-
-  font-family: "Fira Sans", sans-serif;
-  font-size: 0.58rem;
   text-align: center;
   cursor: pointer;
 
   transition:
     background 0.25s ease,
+    border-color 0.25s ease,
     transform 0.25s ease;
 }
 
 .launch-overlay__submit-btn:hover {
-  background: rgba(220, 220, 220, 0.86);
+  background: rgba(45, 40, 40, 0.95);
+  border-color: rgba(255, 255, 255, 0.36);
   transform: translateY(-1px);
 }
 
@@ -178,43 +184,64 @@
   }
 
   .launch-overlay__logo {
-    font-family: "My Soul", cursive;
-    font-size: clamp(3.2rem, 36vw, 4.6rem);
-    margin-bottom: 14px;
-    text-wrap: wrap;
     position: relative;
     top: -70px;
+
+    margin-bottom: 14px;
+
+    font-family: "My Soul", cursive;
+    font-size: clamp(3.6rem, 31vw, 6rem);
+    line-height: 0.75;
   }
 
   .launch-overlay__subtitle {
+    margin: -8px 0 16px;
+
     font-family: "Fira Sans", sans-serif;
-    font-weight: 600;
-    margin-bottom: 16px;
     font-size: 1rem;
+    font-weight: 700;
   }
 
   .launch-overlay__form {
-    width: min(330px, 100%);
-    grid-template-columns: 1fr;
-    gap: 8px;
+    width: min(280px, 100%);
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+
+    gap: 8px;
+    margin: 0 auto;
   }
 
   .launch-overlay__input,
   .launch-overlay__submit-btn {
-    height: 36px;
+    width: 100%;
+    height: 32px;
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 2px;
+
+    background: rgba(33, 29, 29, 0.9);
+    color: #fff;
+
+    font-family: "Fira Sans", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
   }
 
   .launch-overlay__input {
-    font-size: 0.85rem;
+    padding: 0 12px;
+    text-align: left;
+  }
+
+  .launch-overlay__input::placeholder {
+    font-size: 0.72rem;
+    font-weight: 400;
   }
 
   .launch-overlay__submit-btn {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-    background-color: rgb(39, 36, 36, 1);
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
   }
 }
