@@ -1,27 +1,36 @@
 import "./ProductModal.css";
 
-function ProductModal({ onClose, product, onAddToCart }) {
+function ProductModal({ product, onClose, onBuyNow }) {
   if (!product) return null;
 
   return (
-    <div className="modal" onClick={onClose}>
-      <div className="modal__container" onClick={(e) => e.stopPropagation()}>
-        <button className="modal__close" onClick={onClose}>
+    <div className="product-modal" onMouseDown={onClose}>
+      <div className="product-modal__container" onMouseDown={(e) => e.stopPropagation()}>
+        <button className="product-modal__close" type="button" onClick={onClose} aria-label="Close product modal">
           ×
         </button>
 
-        <img src={product.imageUrl} alt={product.name} className="modal__image" />
+        <img className="product-modal__image" src={product.image} alt={product.name} />
 
-        <p className="modal__price">${product.price}</p>
+        <div className="product-modal__content">
+          <div className="product-modal__heading">
+            <h2 className="product-modal__title">{product.name}</h2>
+            <p className="product-modal__price">{product.price}</p>
+          </div>
 
-        <p className="modal__description">{product.description}</p>
+          <p className="product-modal__description">
+            {product.description || "Luxury streetwear designed for presence, comfort, and culture."}
+          </p>
 
-        <div className="modal__actions">
-          <button className="modal__buy-btn">Buy Now</button>
+          <div className="product-modal__actions">
+            <button className="product-modal__buy-btn" type="button" onClick={() => onBuyNow(product)}>
+              Buy Now
+            </button>
 
-          <button className="modal__add-btn" onClick={() => onAddToCart(product)}>
-            Add To Cart
-          </button>
+            <button className="product-modal__cart-btn" type="button">
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>

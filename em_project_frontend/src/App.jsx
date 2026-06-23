@@ -10,6 +10,8 @@ import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import Cart from "./components/Cart/Cart";
 
+import CheckoutModal from "./components/CheckoutModal/CheckoutModal";
+
 import LoginModal from "./components/LoginModal/LoginModal";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
 
@@ -24,6 +26,7 @@ function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [checkoutProduct, setCheckoutProduct] = useState(null);
 
   const handleCardClick = (product) => {
     setSelectedProduct(product);
@@ -46,6 +49,15 @@ function App() {
     console.log("Register:", data);
   };
 
+  const handleBuyNow = (product) => {
+    setCheckoutProduct(product);
+    setSelectedProduct(null);
+  };
+
+  const closeCheckoutModal = () => {
+    setCheckoutProduct(null);
+  };
+
   return (
     <>
       <LaunchOverlay />
@@ -66,7 +78,9 @@ function App() {
 
         {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
 
-        {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} />}
+        {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} onBuyNow={handleBuyNow} />}
+
+        {checkoutProduct && <CheckoutModal product={checkoutProduct} onClose={closeCheckoutModal} />}
 
         {location.pathname !== "/clothing-items" && <Footer />}
       </div>

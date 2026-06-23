@@ -23,7 +23,7 @@
   isolation: isolate;
 
   /* Turn this on only when you want to hide the overlay */
-  /* display: none; */
+  display: none;
 }
 
 /* Main clothing background */
