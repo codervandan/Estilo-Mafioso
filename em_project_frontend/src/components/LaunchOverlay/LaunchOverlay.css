@@ -74,7 +74,7 @@
   margin: 0 0 18px;
 
   font-family: "Tangerine", cursive;
-  font-size: clamp(3.6rem, 6vw, 5rem);
+  font-size: clamp(7.6rem, 26vw, 5rem);
   font-weight: 400;
   line-height: 0.82;
 
@@ -85,7 +85,7 @@
 .launch-overlay__subtitle {
   margin: 0 0 16px;
 
-  font-family: "Tangerine", cursive;
+  font-family: "Fira Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
@@ -103,8 +103,12 @@
 }
 
 .launch-overlay__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 22px;
-  padding: 0 8px;
+  padding: 24px 8px;
+  margin-left: 44px;
 
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 3px;
@@ -125,19 +129,25 @@
 }
 
 .launch-overlay__submit-btn {
-  height: 22px;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 22px; */
+  /* padding: 24px 8px; */
+  margin-left: 10px;
+  margin-right: 47px;
+  padding: 10px;
+  height: 49px;
 
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 3px;
 
-  background: rgba(185, 185, 185, 0.74);
+  background: rgba(20, 20, 20, 0.82);
   color: rgba(255, 255, 255, 0.95);
 
-  font-family: "Tangerine", cursive;
-  font-size: 0.82rem;
-  font-weight: 700;
-
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.58rem;
+  text-align: center;
   cursor: pointer;
 
   transition:
