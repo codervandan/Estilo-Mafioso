@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=My+Soul&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .launch-overlay {
   position: fixed;
@@ -168,11 +169,16 @@
 
   .launch-overlay__logo {
     font-family: "My Soul", cursive;
-    font-size: clamp(3.2rem, 15vw, 4.6rem);
+    font-size: clamp(3.2rem, 36vw, 4.6rem);
     margin-bottom: 14px;
+    text-wrap: wrap;
+    position: relative;
+    top: -70px;
   }
 
   .launch-overlay__subtitle {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
     margin-bottom: 16px;
     font-size: 1rem;
   }
@@ -193,7 +199,9 @@
   }
 
   .launch-overlay__submit-btn {
-    font-size: 1.25rem;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
     background-color: rgb(39, 36, 36, 1);
   }
 }
