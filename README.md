@@ -9,7 +9,7 @@ Uncomment line 26 inside LaunchOverlay.css to view the Home Page and other conte
 
 # GitHub Link
 
-https://estilo-mafioso.vercel.app/
+https://github.com/codervandan/Estilo-Mafioso
 
 # Project Website Link
 
