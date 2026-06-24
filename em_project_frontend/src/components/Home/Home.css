@@ -111,7 +111,35 @@
   color: black;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
+  .home {
+    padding-top: 80px;
+  }
+
+  .home__brand {
+    margin-top: 0;
+    margin-bottom: 120px;
+  }
+
+  .home__title {
+    font-size: clamp(70px, 24vw, 110px);
+    line-height: 0.78;
+  }
+
+  .home__subtitle {
+    margin-top: 18px;
+    font-size: 14px;
+    letter-spacing: 5px;
+  }
+
+  .home__nav {
+    padding: 14px 28px;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (max-width: 580px) {
   .home__title {
     font-size: 6rem;
     letter-spacing: 6px;
@@ -123,7 +151,8 @@
   .home__subtitle {
     font-size: 1rem;
     letter-spacing: 4px;
-    margin-top: -25px;
+    margin-top: 74px;
+    margin-bottom: -69px;
     top: 50px;
   }
 

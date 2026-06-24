@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import LaunchOverlay from "./components/LaunchOverlay/LaunchOverlay";
@@ -17,16 +17,26 @@ import RegisterModal from "./components/RegisterModal/RegisterModal";
 
 import ProductModal from "./components/ProductModal/ProductModal";
 import ClothingItems from "./components/ClothingItems/ClothingItems";
+import AddProductModal from "./components/AddProductModal/AddProductModal";
+import { createClothingItem, deleteClothingItem, getClothingItems } from "./utils/api";
+import ConfirmDeleteModal from "./components/ConfirmDeleteModal/ConfirmDeleteModal";
 
 import "./App.css";
 
 function App() {
   const location = useLocation();
+  const isAdmin = import.meta.env.VITE_ADMIN_MODE === "true";
 
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [isProductsLoading, setIsProductsLoading] = useState(false);
+  const [productsError, setProductsError] = useState("");
   const [checkoutProduct, setCheckoutProduct] = useState(null);
+  const [productToDelete, setProductToDelete] = useState(null);
+  const [isDeletingProduct, setIsDeletingProduct] = useState(false);
+  const [isAddProductOpen, setIsAddProductOpen] = useState(false);
 
   const handleCardClick = (product) => {
     setSelectedProduct(product);
@@ -54,9 +64,86 @@ function App() {
     setSelectedProduct(null);
   };
 
+  const openAddProductModal = () => {
+    setIsAddProductOpen(true);
+  };
+
+  const closeAddProductModal = () => {
+    setIsAddProductOpen(false);
+  };
+
+  const handleAddProduct = (newProduct) => {
+    return createClothingItem(newProduct)
+      .then((savedProduct) => {
+        const formattedProduct = {
+          ...savedProduct,
+          image: savedProduct.image || savedProduct.imageUrl,
+        };
+
+        setProducts((currentProducts) => [formattedProduct, ...currentProducts]);
+        closeAddProductModal();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  const handleDeleteProduct = (product) => {
+    setProductToDelete(product);
+  };
+
+  const closeDeleteModal = () => {
+    setProductToDelete(null);
+  };
+
+  const confirmDeleteProduct = () => {
+    if (!productToDelete) {
+      return;
+    }
+
+    setIsDeletingProduct(true);
+
+    deleteClothingItem(productToDelete._id)
+      .then(() => {
+        setProducts((currentProducts) => currentProducts.filter((item) => item._id !== productToDelete._id));
+
+        setSelectedProduct((currentProduct) => (currentProduct?._id === productToDelete._id ? null : currentProduct));
+
+        setProductToDelete(null);
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+      .finally(() => {
+        setIsDeletingProduct(false);
+      });
+  };
+
   const closeCheckoutModal = () => {
     setCheckoutProduct(null);
   };
+
+  useEffect(() => {
+    setIsProductsLoading(true);
+
+    getClothingItems()
+      .then((items) => {
+        const formattedItems = items.map((item) => ({
+          ...item,
+          image: item.image || item.imageUrl,
+        }));
+
+        setProducts(formattedItems);
+        setProductsError("");
+      })
+      .catch((err) => {
+        console.error(err);
+        setProductsError("Could not load clothing items.");
+      })
+      .finally(() => {
+        setIsProductsLoading(false);
+      });
+  }, []);
 
   return (
     <>
@@ -70,7 +157,20 @@ function App() {
             <Route path="/" element={<Home onCardClick={handleCardClick} />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/clothing-items" element={<ClothingItems onCardClick={handleCardClick} />} />
+            <Route
+              path="/clothing-items"
+              element={
+                <ClothingItems
+                  products={products}
+                  onCardClick={handleCardClick}
+                  isLoading={isProductsLoading}
+                  error={productsError}
+                  isAdmin={isAdmin}
+                  onAddProductClick={openAddProductModal}
+                  onDeleteProduct={handleDeleteProduct}
+                />
+              }
+            />
           </Routes>
         </main>
 
@@ -81,6 +181,17 @@ function App() {
         {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} onBuyNow={handleBuyNow} />}
 
         {checkoutProduct && <CheckoutModal product={checkoutProduct} onClose={closeCheckoutModal} />}
+
+        {isAddProductOpen && <AddProductModal onClose={closeAddProductModal} onAddProduct={handleAddProduct} />}
+
+        {productToDelete && (
+          <ConfirmDeleteModal
+            product={productToDelete}
+            onClose={closeDeleteModal}
+            onConfirm={confirmDeleteProduct}
+            isDeleting={isDeletingProduct}
+          />
+        )}
 
         {location.pathname !== "/clothing-items" && <Footer />}
       </div>
