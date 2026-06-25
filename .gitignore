@@ -4,3 +4,12 @@ dist/
 .vite/
 npm-debug.log*
 .DS_Store
+# environment variables
+.env
+.env.*
+em_project_frontend/.env
+em_project_backend/.env
+
+# keep safe example env files
+!em_project_frontend/.env.example
+!em_project_backend/.env.example
