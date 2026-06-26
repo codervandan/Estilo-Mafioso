@@ -13,4 +13,4 @@ https://github.com/codervandan/Estilo-Mafioso
 
 # Project Website Link
 
-https://estilo-mafioso.vercel.app/
+http://8.235.14.117/
