@@ -33,16 +33,16 @@
   color: rgba(229, 231, 229, 0.7);
   letter-spacing: clamp(2px, 1vw, 12px);
   line-height: 0.6;
-  animation:
+  /* animation:
     luxuryFade 2s ease-out,
-    float 2s ease-in-out infinite 3s;
+    float 2s ease-in-out infinite 3s; */
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   margin: 0;
   margin-bottom: -15px;
   pointer-events: none;
   -webkit-text-stroke: 1px rgba(229, 231, 229, 0.5);
 }
-
+/* 
 @keyframes float {
   0%,
   100% {
@@ -66,7 +66,7 @@
     transform: translateY(0);
     letter-spacing: 4px;
   }
-}
+} */
 
 .home__subtitle {
   margin: 0;
