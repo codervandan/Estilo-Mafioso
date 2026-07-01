@@ -16,7 +16,7 @@ function ProductCard({ product, onCardClick, onDeleteProduct }) {
   };
 
   return (
-    <article className="product-card" onClick={handleCardClick}>
+    <article className="product-card">
       {onDeleteProduct && (
         <button className="product-card__delete-btn" type="button" onClick={handleDeleteClick} aria-label={`Delete ${product.name}`}>
           ×
@@ -29,6 +29,10 @@ function ProductCard({ product, onCardClick, onDeleteProduct }) {
         <h3 className="product-card__title">{product.name}</h3>
         <p className="product-card__price">${product.price}</p>
       </div>
+
+      <button className="product-card__details-btn" type="button" onClick={handleCardClick}>
+        View Details
+      </button>
     </article>
   );
 }

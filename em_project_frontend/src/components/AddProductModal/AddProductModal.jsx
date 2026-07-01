@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./AddProductModal.css";
 
 function AddProductModal({ onClose, onAddProduct }) {
@@ -13,6 +13,20 @@ function AddProductModal({ onClose, onAddProduct }) {
   });
 
   const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [onClose]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -46,7 +60,7 @@ function AddProductModal({ onClose, onAddProduct }) {
   return (
     <div className="add-product-modal" onMouseDown={onClose}>
       <div className="add-product-modal__container" onMouseDown={(e) => e.stopPropagation()}>
-        <button className="add-product-modal__close" type="button" onClick={onClose}>
+        <button className="add-product-modal__close" type="button" onClick={onClose} aria-label="Close add product modal">
           ×
         </button>
 
@@ -126,7 +140,7 @@ function AddProductModal({ onClose, onAddProduct }) {
             In stock
           </label>
 
-          <button className="add-product-modal__submit" type="submit">
+          <button className="add-product-modal__submit" type="submit" disabled={isSaving}>
             {isSaving ? "Saving..." : "Add Product"}
           </button>
         </form>

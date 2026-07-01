@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import LaunchOverlay from "./components/LaunchOverlay/LaunchOverlay";
+// import LaunchOverlay from "./components/LaunchOverlay/LaunchOverlay";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -25,7 +25,8 @@ import "./App.css";
 
 function App() {
   const location = useLocation();
-  const isAdmin = import.meta.env.VITE_ADMIN_MODE === "true";
+  // const isAdmin = import.meta.env.VITE_ADMIN_MODE === "true";
+  const isAdmin = true;
 
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -37,6 +38,7 @@ function App() {
   const [productToDelete, setProductToDelete] = useState(null);
   const [isDeletingProduct, setIsDeletingProduct] = useState(false);
   const [isAddProductOpen, setIsAddProductOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleCardClick = (product) => {
     setSelectedProduct(product);
@@ -61,6 +63,20 @@ function App() {
 
   const handleBuyNow = (product) => {
     setCheckoutProduct(product);
+    setSelectedProduct(null);
+  };
+
+  const handleAddToCart = (product) => {
+    setCartItems((currentItems) => {
+      const isAlreadyInCart = currentItems.some((item) => item._id === product._id);
+
+      if (isAlreadyInCart) {
+        return currentItems;
+      }
+
+      return [...currentItems, product];
+    });
+
     setSelectedProduct(null);
   };
 
@@ -147,16 +163,16 @@ function App() {
 
   return (
     <>
-      <LaunchOverlay />
+      {/* <LaunchOverlay /> */}
 
       <div className="app">
-        <Header />
+        <Header onLoginClick={() => setIsLoginOpen(true)} onRegisterClick={() => setIsRegisterOpen(true)} />
 
         <main>
           <Routes>
             <Route path="/" element={<Home onCardClick={handleCardClick} />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart cartItems={cartItems} />} />
             <Route
               path="/clothing-items"
               element={
@@ -178,7 +194,9 @@ function App() {
 
         {isRegisterOpen && <RegisterModal onRegister={handleRegister} onClose={closeAllModals} />}
 
-        {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProductModal} onBuyNow={handleBuyNow} />}
+        {selectedProduct && (
+          <ProductModal product={selectedProduct} onClose={closeProductModal} onBuyNow={handleBuyNow} onAddToCart={handleAddToCart} />
+        )}
 
         {checkoutProduct && <CheckoutModal product={checkoutProduct} onClose={closeCheckoutModal} />}
 

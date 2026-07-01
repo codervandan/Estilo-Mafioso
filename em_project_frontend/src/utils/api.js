@@ -1,11 +1,13 @@
 const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
 
 const checkResponse = (res) => {
-  if (res.ok) {
-    return res.json();
+  if (!res.ok) {
+    return Promise.reject(`Error: ${res.status}`);
   }
 
-  return Promise.reject(`Error: ${res.status}`);
+  return res.text().then((text) => {
+    return text ? JSON.parse(text) : {};
+  });
 };
 
 export const getClothingItems = () => {

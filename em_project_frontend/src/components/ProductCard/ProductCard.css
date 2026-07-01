@@ -81,6 +81,33 @@
   transform: scale(1.05);
 }
 
+.product-card__details-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+
+  background: rgba(0, 0, 0, 0.72);
+  color: rgba(255, 255, 255, 0.94);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.product-card__details-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
 @media screen and (max-width: 768px) {
   .product-card__delete-btn {
     opacity: 1;
